@@ -1,6 +1,7 @@
 import 'setimmediate'
 import NextApp from 'next/app'
 import React from 'react'
+import { ThemeProvider } from 'react-native-magnus'
 import { FirebaseAppProvider } from 'reactfire'
 
 const firebaseConfig = {
@@ -16,7 +17,9 @@ const firebaseConfig = {
 export default function App(props: any): JSX.Element {
   return (
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <NextApp {...props} />
+      <ThemeProvider>
+        <NextApp {...props} />
+      </ThemeProvider>
     </FirebaseAppProvider>
   )
 }

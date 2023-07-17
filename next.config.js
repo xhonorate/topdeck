@@ -10,13 +10,6 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
-  webpack: (config, { dev }) => {
-    config.module.rules.push({
-      test: /\.(spec|test).[jt]s?(x)$/,
-      loader: "ignore-loader",
-    });
-    return config;
-  },
 };
 
 module.exports = () => {
