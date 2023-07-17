@@ -13,9 +13,7 @@ const firebaseConfig = {
   appId: '1:23104403186:web:678635c74352122cf4026b',
 }
 
-// eslint-disable-next-line
 export default function App(props: any): JSX.Element {
-  // eslint-disable-next-line
   return (
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <NextApp {...props} />

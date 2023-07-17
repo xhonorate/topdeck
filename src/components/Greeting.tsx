@@ -1,12 +1,18 @@
+import { doc } from 'firebase/firestore'
 import React from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { useFirestoreDocData, useFirestore } from 'reactfire'
 
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 16,
-  },
-})
+export default function Greetings() {
+  // easily access the Firestore library
+  const burritoRef = doc(useFirestore(), 'tryreactfire', 'burrito')
 
-export default function Greeting(): JSX.Element {
-  return <Text style={styles.text}>Welcome to Expo + Next.js 👋</Text>
+  // subscribe to a document for realtime updates. just one line!
+  const { status, data } = useFirestoreDocData(burritoRef)
+
+  // easily check the loading status
+  if (status === 'loading') {
+    return <p>Fetching burrito flavor...</p>
+  }
+
+  return <p>The burrito is {data.yummy ? 'good' : 'bad'}!</p>
 }
