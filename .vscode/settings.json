@@ -1,0 +1,9 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.renderWhitespace": "all",
+  "eslint.validate": ["javascript", "typescript"],
+}

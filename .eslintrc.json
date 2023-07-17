@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "universe",
+    "universe/shared/typescript-analysis"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.d.ts"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    }
+  ]
+}

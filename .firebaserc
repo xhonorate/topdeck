@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "default": "create-expo-next-firebase-app"
+  }
+}
