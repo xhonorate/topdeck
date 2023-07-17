@@ -30,6 +30,8 @@
     "react-dom": "18.2.0",
     "react-native": "0.70.6",
     "react-native-web": "0.18.10",
+    "react-scripts": "5.0.1",
+    "reactfire": "4.2.3",
     "setimmediate": "1.0.5"
   },
   "devDependencies": {
