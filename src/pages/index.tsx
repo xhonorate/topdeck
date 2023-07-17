@@ -15,7 +15,6 @@ export default function App() {
   return (
     <FirestoreProvider sdk={firestoreInstance}>
       <Suspense>
-        {/* if you want nice React 18 concurrent hydration, you'll want Suspense near the root */}
         <NavigationContainer>
           <Tab.Navigator>
             <Tab.Screen
