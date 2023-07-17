@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "build": "next build && next export --openssl-legacy-provider"
+    "build": "next build && next export"
   },
   "main": "entry.tsx",
   "husky": {
