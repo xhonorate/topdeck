@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "start": "next start",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider next start",
     "lint": "eslint --fix src",
     "android": "expo start --android",
     "ios": "expo start --ios",
