@@ -1,9 +1,9 @@
 import RoomLoader from '../components/Game/RoomLoader';
-import { AuthCheck, SignInForm } from '../services/Auth';
+import { AuthCheck } from '../services/Auth';
 
 export default function GamePage() {
   return (
-    <AuthCheck fallback={<SignInForm />}>
+    <AuthCheck>
       <RoomLoader />
     </AuthCheck>
   );
