@@ -7,7 +7,7 @@ import {
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Box, Button, Text } from 'react-native-magnus';
+import { Box, Button } from 'react-native-magnus';
 import { useAuth, useFirestore } from 'reactfire';
 
 export default function LoginPage() {
