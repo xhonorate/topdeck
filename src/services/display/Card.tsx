@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 export const Card = ({
   children,
@@ -11,8 +11,8 @@ export const Card = ({
       </div>
       <div>{children}</div>
     </div>
-  )
-}
+  );
+};
 
 export const CardSection = ({
   children,
@@ -25,5 +25,5 @@ export const CardSection = ({
       </div>
       <div className="p-2">{children}</div>
     </div>
-  )
-}
+  );
+};

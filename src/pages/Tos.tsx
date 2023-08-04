@@ -1,3 +1,3 @@
 export default function Tos() {
-  return <>example tos...</>
+  return <>example tos...</>;
 }

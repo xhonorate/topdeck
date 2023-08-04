@@ -1,11 +1,11 @@
-import * as React from 'react'
+import * as React from 'react';
 
 export const WideButton = ({
   label,
   onClick,
 }: {
-  label: string
-  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  label: string;
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }) => {
   return (
     <button
@@ -14,5 +14,5 @@ export const WideButton = ({
     >
       {label}
     </button>
-  )
-}
+  );
+};

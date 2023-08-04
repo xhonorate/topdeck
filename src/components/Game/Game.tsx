@@ -8,8 +8,8 @@ import {
 } from 'reactfire';
 
 interface GameProps {
-  roomId: string;
-  isHost?: boolean;
+  gameId: string;
+  userId: string;
 }
 
 interface RoomData {
@@ -28,9 +28,9 @@ interface PlayerData {
   currentBattle?: string;
 }
 
-export default function Game({ roomId, isHost = false }: GameProps) {
+export default function Game({ gameId, userId }: GameProps) {
   // easily access the Firestore library
-  const gameRef = doc(useFirestore(), 'game', roomId);
+  const gameRef = doc(useFirestore(), 'game', gameId);
 
   const players = collection(gameRef, 'players');
 
@@ -40,7 +40,7 @@ export default function Game({ roomId, isHost = false }: GameProps) {
 
   const { status: status2, data: playerData } =
     //@ts-ignore
-    useFirestoreCollectionData<PlayerData[]>(players);
+    useFirestoreCollectionData<PlayerData>(players);
 
   // easily check the loading status
   if (status === 'loading' || status2 === 'loading') {
@@ -51,15 +51,21 @@ export default function Game({ roomId, isHost = false }: GameProps) {
     return <p>Error Loading Room!?</p>;
   }
 
+  const myPlayer = playerData.find(player => player.NO_ID_FIELD === userId);
+  const isHost = myPlayer?.isHost;
+
+  //TODO: add <HostProvider> provider with some kind of hooks, that only have an effect if isHost is true
+
   return (
     <Box w="100%" h="100%" bg="blue100">
       <Text p={10} fontSize={32} color="black">
-        Game Room: {roomId}
+        Game ID: {gameId}
       </Text>
 
       <Text p={10} fontSize={32} color="black">
         {JSON.stringify(roomData)}
         {JSON.stringify(playerData)}
+        {JSON.stringify(myPlayer)}
       </Text>
     </Box>
   );
